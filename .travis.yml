@@ -1,0 +1,10 @@
+language: python
+sudo: false
+python:
+- '3.5'
+
+script:
+- flake8 django_comments/
+
+install:
+  - pip install -r requirements.txt
