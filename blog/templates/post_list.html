@@ -1,0 +1,35 @@
+<!--<html>
+
+<head>
+	<title>Posts</title>
+</head>
+<body>
+<!--<h2> Posts </h2>
+	<h5>Post 1</h5>
+	<ul>
+      <li>Post id :</li>
+      <li>Post title:</li>
+      <li>Post Content:</li>
+	</ul>
+
+	<h5>Post 2</h5>
+	<ul>
+      <li>Post id :</li>
+      <li>Post title:</li>
+      <li>Post Content:</li>
+	</ul>
+</body>
+</html>-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% for post in posts %}
+    <div class="post">
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
+
+            {% endblock %}
